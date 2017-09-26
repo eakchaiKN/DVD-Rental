@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="contactReport" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fc331a3f-2651-4229-abe1-45423e075d1c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     *
+FROM
+     `dvd` dvd,
+    `report` report
+ORDER BY Rid DESC]]>
+	</queryString>
+	<field name="dvd_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="title" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="category" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="price" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rent_status" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Rid" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Rname" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Rdate" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="RNo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField>
+				<reportElement x="118" y="12" width="300" height="57" uuid="e920023e-6563-43d1-bb36-230b471145a7"/>
+				<textElement textAlignment="Center">
+					<font size="26" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Rname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="469" y="39" width="55" height="20" uuid="6963dd62-3ef1-4f3f-a529-07bd1eb2258a"/>
+				<textFieldExpression><![CDATA[$F{RNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="469" y="59" width="86" height="20" uuid="42e879ae-7874-4a45-b7e4-cf643d36b9e0"/>
+				<textFieldExpression><![CDATA[$F{Rdate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="429" y="59" width="40" height="20" uuid="bb71511f-994d-4cf0-affe-97e222f7f177"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="429" y="39" width="40" height="20" uuid="d0584841-a0a9-46a2-afa8-f6945a26fa5a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[No.]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="23" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="56" splitType="Stretch">
+			<staticText>
+				<reportElement x="79" y="32" width="129" height="20" uuid="7423adfe-0de7-4cc1-ac6c-3551afe23c12"/>
+				<textElement textAlignment="Justified">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TITLE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="23" y="32" width="31" height="20" uuid="6226b18e-fd17-4c5f-8541-87dfce058534"/>
+				<textElement textAlignment="Justified">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="274" y="32" width="89" height="20" uuid="c4ccdd97-bfa1-48c9-8496-77e2f573e023"/>
+				<textElement textAlignment="Justified">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CATEGORY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="405" y="32" width="64" height="20" uuid="45152e7d-e808-4303-b5d3-fae98cd6b475"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PRICE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="503" y="32" width="31" height="20" uuid="8cad57ff-5e2c-4fcf-92a4-c112a5188064"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[STATUS]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement x="79" y="10" width="129" height="20" uuid="58c716c7-3d9c-46c0-9e07-7fef9a894e6f"/>
+				<textFieldExpression><![CDATA[$F{title}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="274" y="10" width="89" height="20" uuid="911da9cc-a07d-4a7b-99e6-972ede61768d"/>
+				<textFieldExpression><![CDATA[$F{category}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="23" y="10" width="31" height="20" uuid="b1942331-471a-4e2f-9a96-f7636410e39f"/>
+				<textFieldExpression><![CDATA[$F{dvd_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="405" y="10" width="64" height="20" uuid="30a24d65-bdc8-4d1c-9dbc-4b6027aa634f"/>
+				<textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="503" y="10" width="31" height="20" uuid="c9cb5658-7cbc-4c16-ab95-81e1ddc7d524"/>
+				<textFieldExpression><![CDATA[$F{rent_status}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
